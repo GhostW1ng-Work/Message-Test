@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+    ports:
+      - "7026:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend  # Директория с фронтом
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend  # Фронт ждёт, пока поднимется бэкенд
+
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: message_test_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bambambam
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    ports:
+      - "5432:5432"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
