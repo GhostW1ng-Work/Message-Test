@@ -2658,11 +2658,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Web\\MessageTest\\MessageTest.csproj",
+      "projectUniqueName": "C:\\Web\\Message-Test\\MessageTest.csproj",
       "projectName": "MessageTest",
-      "projectPath": "C:\\Web\\MessageTest\\MessageTest.csproj",
+      "projectPath": "C:\\Web\\Message-Test\\MessageTest.csproj",
       "packagesPath": "C:\\Users\\workj\\.nuget\\packages\\",
-      "outputPath": "C:\\Web\\MessageTest\\obj\\",
+      "outputPath": "C:\\Web\\Message-Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

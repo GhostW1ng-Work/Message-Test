@@ -5,13 +5,13 @@ namespace MessageTest.Services
 {
 	public class DataBaseService : IDataBaseService
 	{
-		private readonly string _connectionString = "Host=db;Port=5432;Database=message_test_db;Username=postgres;Password=bambambam;Pooling=false;";
-
-
+		private const string CONNECTION_STRING_NAME = "PostgresConnection";
+		private readonly string _connectionString;
 		private readonly ILogger<DataBaseService> _logger;
 
-		public DataBaseService(ILogger<DataBaseService> logger)
+		public DataBaseService(IConfiguration configuration, ILogger<DataBaseService> logger)
 		{
+			_connectionString = configuration.GetConnectionString(CONNECTION_STRING_NAME);
 			_logger = logger;
 		}
 
@@ -19,7 +19,7 @@ namespace MessageTest.Services
 		{
 			var messages = new List<MessageDto>();
 			_logger.LogInformation("Запрос сообщений от {From} до {To}", from, to);
-			
+
 			try
 			{
 				_logger.LogInformation("Попытка подключения к базе данных для сохранения сообщения...");
@@ -57,7 +57,7 @@ namespace MessageTest.Services
 			{
 				await using var connection = new NpgsqlConnection(_connectionString);
 				await connection.OpenAsync();
-			
+
 				await using var command = new NpgsqlCommand(
 					"INSERT INTO messages (text, order_number, timestamp) VALUES (@text, @order,@timestamp)", connection);
 				command.Parameters.AddWithValue("text", text);
@@ -66,7 +66,7 @@ namespace MessageTest.Services
 				await command.ExecuteNonQueryAsync();
 				_logger.LogInformation("Сообщение с Номером {Order} успешно сохранено в базе данных", order);
 			}
-			catch(Exception exception) 
+			catch (Exception exception)
 			{
 				_logger.LogError(exception, "Error saving message to database");
 				throw;

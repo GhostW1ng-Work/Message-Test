@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Web\\Message-Test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\frontend\\src\\components\\sendmessage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:frontend\\src\\components\\sendmessage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\messagehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:messagehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\frontend\\src\\components\\messagehistory.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:frontend\\src\\components\\messagehistory.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|c:\\web\\message-test\\frontend\\src\\components\\livemessages.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{1A779FA0-1955-408B-B276-8BA72291326D}|MessageTest.csproj|solutionrelative:frontend\\src\\components\\livemessages.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataBaseService.cs",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\Services\\DataBaseService.cs",
+              "RelativeDocumentMoniker": "Services\\DataBaseService.cs",
+              "ToolTip": "C:\\Web\\Message-Test\\Services\\DataBaseService.cs",
+              "RelativeToolTip": "Services\\DataBaseService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T11:58:09.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Web\\Message-Test\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-02-15T11:38:23.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SendMessage.tsx",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\frontend\\src\\components\\SendMessage.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\SendMessage.tsx",
+              "ToolTip": "C:\\Web\\Message-Test\\frontend\\src\\components\\SendMessage.tsx",
+              "RelativeToolTip": "frontend\\src\\components\\SendMessage.tsx",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvzcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-15T11:35:45.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Web\\Message-Test\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADwv1YAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T11:27:01.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MessageHub.cs",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\MessageHub.cs",
+              "RelativeDocumentMoniker": "MessageHub.cs",
+              "ToolTip": "C:\\Web\\Message-Test\\MessageHub.cs",
+              "RelativeToolTip": "MessageHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T11:22:52.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LiveMessages.tsx",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\frontend\\src\\components\\LiveMessages.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\LiveMessages.tsx",
+              "ToolTip": "C:\\Web\\Message-Test\\frontend\\src\\components\\LiveMessages.tsx",
+              "RelativeToolTip": "frontend\\src\\components\\LiveMessages.tsx",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-15T11:22:04.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MessageHistory.tsx",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\frontend\\src\\components\\MessageHistory.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\MessageHistory.tsx",
+              "ToolTip": "C:\\Web\\Message-Test\\frontend\\src\\components\\MessageHistory.tsx",
+              "RelativeToolTip": "frontend\\src\\components\\MessageHistory.tsx",
+              "ViewState": "AgIAABwAAAAAAAAAAADwvzgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-15T11:21:39.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Web\\Message-Test\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Web\\Message-Test\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Controllers\\MessagesController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T21:16:49.575Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://messagetest-backend-1/api/messages/send";
+const API_URL = "http://message-test-backend-1/api/messages/send";
 
 function SendMessage() {
     const [text, setText] = useState("");

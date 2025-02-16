@@ -25,9 +25,6 @@ namespace MessageTest.Controllers
 		}
 
 		[HttpPost("send")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<IActionResult> SendMessage([FromBody] MessageDto message)
 		{
 			_logger.LogInformation("Отправка сообщения: {Message}", JsonSerializer.Serialize(message));
@@ -58,9 +55,6 @@ namespace MessageTest.Controllers
 		}
 
 		[HttpGet("history")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<IActionResult> GetHistory([FromQuery] DateTimeOffset from, [FromQuery] DateTimeOffset to)
 		{
 			_logger.LogInformation("Запрос на получение сообщений от {From} до {To}", from, to);

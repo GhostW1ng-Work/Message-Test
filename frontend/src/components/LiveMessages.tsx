@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from "react";
 import * as signalR from "@microsoft/signalr";
 
-const HUB_URL = "http://backend/messageHub";
+const HUB_URL = "http://message-test-backend-1/messageHub";
 
 function LiveMessages() {
     const [messages, setMessages] = useState<{ text: string; order: number; timestamp: number }[]>([]);

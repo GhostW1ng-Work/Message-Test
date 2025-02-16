@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_URL = "https://backend/api/messages/history";
+const API_URL = "http://message-test-backend-1/api/messages/history";
 
 function MessageHistory() {
     const [messages, setMessages] = useState<{ text: string; order: number; timestamp: number }[]>([]);

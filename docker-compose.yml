@@ -6,22 +6,25 @@ services:
       context: .
     ports:
       - "7026:80"
+    expose:
+      - "80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:
       - app-network
     depends_on:
       - db
+    restart: always
 
   frontend:
     build:
-      context: ./frontend  # Директория с фронтом
+      context: ./frontend
     ports:
       - "3000:80"
     networks:
       - app-network
     depends_on:
-      - backend  # Фронт ждёт, пока поднимется бэкенд
+      - backend
 
   db:
     image: postgres:alpine
@@ -34,7 +37,7 @@ services:
     networks:
       - app-network
     ports:
-      - "5432:5432"
+      - "5432:5441"
 
 networks:
   app-network:
