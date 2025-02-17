@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://message-test-backend-1/api/messages/send";
+const API_URL = import.meta.env.VITE_API_URL +"/sendmessage"!;
 
 function SendMessage() {
     const [text, setText] = useState("");
@@ -10,11 +10,12 @@ function SendMessage() {
         if (!text.trim()) return;
 
         const payload = {
-            text,
+            text: text,
             order_number: Date.now(),
             timestamp: new Date().toISOString(),
         };
 
+        console.log("API_URL: ", API_URL);
         console.log("Отправка сообщения:", payload); 
 
         try {

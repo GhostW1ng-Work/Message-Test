@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace MessageTest.Dtos
+namespace MessageTest.Models.Dtos
 {
 	public class MessageDto
 	{

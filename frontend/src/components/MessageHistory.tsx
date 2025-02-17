@@ -1,13 +1,14 @@
 ﻿import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://message-test-backend-1/api/messages/history";
+const API_URL = import.meta.env.VITE_API_URL +"/gethistory"!;
 
 function MessageHistory() {
     const [messages, setMessages] = useState<{ text: string; order: number; timestamp: number }[]>([]);
 
     useEffect(() => {
         const fetchMessages = async () => {
+            console.log("API_URL", API_URL);
             const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000).toISOString();
             const now = new Date().toISOString();
             console.log(`Запрос на получение сообщений с ${tenMinutesAgo} до ${now}`);

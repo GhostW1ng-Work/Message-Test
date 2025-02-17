@@ -2,7 +2,7 @@
   {
     "ContainingType": "MessageTest.Controllers.MessagesController",
     "Method": "GetHistory",
-    "RelativePath": "api/messages/history",
+    "RelativePath": "api/messages/GetHistory",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,62 +18,22 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "MessageTest.Controllers.MessagesController",
     "Method": "SendMessage",
-    "RelativePath": "api/messages/send",
+    "RelativePath": "api/messages/SendMessage",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "message",
-        "Type": "MessageTest.Dtos.MessageDto",
+        "Type": "MessageTest.Models.Dtos.MessageDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
+    "ReturnTypes": []
   }
 ]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace MessageTest
+namespace MessageTest.Hubs
 {
 	public class MessageHub : Hub
 	{
@@ -11,10 +11,10 @@ namespace MessageTest
 			_logger = logger;
 		}
 
-		public async Task SendMessage(string text, int order)
+		public async Task SendMessageAsync(string text, long order)
 		{
 			var timestamp = DateTime.UtcNow;
-			_logger.LogInformation("Отправка сообщения {Text} с номером {Order} в {Timestamp}", text,order,timestamp);
+			_logger.LogInformation("Отправка сообщения {Text} с номером {Order} в {Timestamp}", text, order, timestamp);
 
 			try
 			{

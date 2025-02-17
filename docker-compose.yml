@@ -1,24 +1,20 @@
 version: "3.8"
-
 services:
   backend:
     build:
       context: .
     ports:
       - "7026:80"
-    expose:
-      - "80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:
       - app-network
     depends_on:
       - db
-    restart: always
 
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend 
     ports:
       - "3000:80"
     networks:
@@ -37,7 +33,7 @@ services:
     networks:
       - app-network
     ports:
-      - "5432:5441"
+      - "5432:5432"
 
 networks:
   app-network:

@@ -1,15 +1,15 @@
-using MessageTest;
-using MessageTest.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
+using MessageTest.Extensions;
+using MessageTest.Hubs;
 using Npgsql;
 using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+
+var builder = WebApplication.CreateBuilder(args)
+	.AddSwaggerConfiguration()
+	.AddApplicationServices()
+	.AddCorsConfiguration();
+
 var configuration = builder.Configuration;
 var connectionString = configuration.GetConnectionString("PostgresConnection");
 
@@ -42,30 +42,10 @@ builder.Host.UseSerilog();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-	c.SwaggerDoc("v1", new OpenApiInfo
-	{
-		Title = "Message API",
-		Version = "v1",
-		Description = "API для отправки и получения сообщений"
-	});
-});
+
 
 builder.Services.AddSignalR();
 builder.Services.AddLogging();
-builder.Services.AddSingleton<IDataBaseService, DataBaseService>();
-
-builder.Services.AddCors(options =>
-{
-	options.AddPolicy("CorsPolicy", policy =>
-	{
-		policy.WithOrigins("http://localhost:3000", "http://message-test-frontend-1")
-			  .AllowAnyMethod()
-			  .AllowAnyHeader()
-			  .AllowCredentials();
-	});
-});
 
 var app = builder.Build();
 
@@ -75,8 +55,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
-
-app.UseCors("CorsPolicy");
+app.UseCors("AllowAll");
 app.UseRouting();
 app.UseAuthorization();
 

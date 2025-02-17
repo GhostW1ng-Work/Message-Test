@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from "react";
 import * as signalR from "@microsoft/signalr";
 
-const HUB_URL = "http://message-test-backend-1/messageHub";
+const HUB_URL = import.meta.env.VITE_HUB_URL!;
 
 function LiveMessages() {
     const [messages, setMessages] = useState<{ text: string; order: number; timestamp: number }[]>([]);
@@ -19,6 +19,7 @@ function LiveMessages() {
 
         async function startConnection() {
             try {
+                console.log("HUB_URL", HUB_URL);
                 await connection.start();
                 console.log("SignalR connected");
 

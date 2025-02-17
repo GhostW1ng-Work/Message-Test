@@ -1,10 +1,7 @@
-﻿using MessageTest.Dtos;
-using MessageTest.Services;
-using Microsoft.AspNetCore.Http;
+﻿using MessageTest.Attributes;
+using MessageTest.Models.Dtos;
+using MessageTest.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
-using Npgsql;
-using System.Text.Json;
 
 namespace MessageTest.Controllers
 {
@@ -12,64 +9,46 @@ namespace MessageTest.Controllers
 	[ApiController]
 	public class MessagesController : ControllerBase
 	{
-		private readonly IDataBaseService _dataBaseService;
+		private readonly IMessageService _messageService;
 		private readonly ILogger<MessagesController> _logger;
-		private readonly IHubContext<MessageHub> _hubContext;
-		public MessagesController(IDataBaseService dataBaseService, 
-			ILogger<MessagesController> logger,
-			IHubContext<MessageHub> hubContext)
+
+		public MessagesController(IMessageService messageService, ILogger<MessagesController> logger)
 		{
-			_dataBaseService = dataBaseService;
+			_messageService = messageService;
 			_logger = logger;
-			_hubContext = hubContext;
 		}
 
-		[HttpPost("send")]
+		[HttpPost("[action]")]
+		[ValidateModel()]
 		public async Task<IActionResult> SendMessage([FromBody] MessageDto message)
 		{
-			_logger.LogInformation("Отправка сообщения: {Message}", JsonSerializer.Serialize(message));
-
-			if (!ModelState.IsValid)
-			{
-				var errors = string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
-				_logger.LogError("Некорректные данные: {Errors}", errors);
-				return BadRequest(ModelState);
-			}
-
-			_logger.LogInformation("Получено сообщение: {Text} с Номером {Order} и временем {Timestamp}",
-				message.Text, message.Order, message.Timestamp);
-
+			_logger.LogInformation($"Получен запрос SendMessage: {message.Text}\n{message.Order}\n{message.Timestamp}");
 			try
 			{
-				await _dataBaseService.SaveMessageAsync(message.Text, message.Order, DateTime.UtcNow);
-				_logger.LogInformation("Сообщение успешно сохранено: {Message}", message.Text);
-
-				await _hubContext.Clients.All.SendAsync("ReceiveMessage", message.Text, message.Order, DateTime.UtcNow);
+				await _messageService.SendMessageAsync(message);
 				return Ok();
 			}
-			catch (Exception ex)
+			catch (Exception exception)
 			{
-				_logger.LogError(ex, "Ошибка при сохранении сообщения");
+				_logger.LogError(exception, "Ошибка при отправке сообщения");
 				return StatusCode(500, "Ошибка сервера");
 			}
 		}
 
-		[HttpGet("history")]
+		[HttpGet("[action]")]
+		[ValidateModel]
 		public async Task<IActionResult> GetHistory([FromQuery] DateTimeOffset from, [FromQuery] DateTimeOffset to)
 		{
-			_logger.LogInformation("Запрос на получение сообщений от {From} до {To}", from, to);
-
 			try
 			{
-				var messages = await _dataBaseService.GetMessageAsync(from, to);
-				_logger.LogInformation("Найдено {Count} сообщений", messages.Count);
+				var messages = await _messageService.GetMessagesAsync(from, to);
 				return Ok(messages);
 			}
-			catch (Exception ex)
+			catch (Exception exception)
 			{
-				_logger.LogError(ex, "Ошибка при получении сообщений от {From} до {To}", from, to);
+				_logger.LogError(exception, $"Ошибка получения сообщений от {from} до {to}");
 				return StatusCode(500, "Ошибка сервера");
-			}
+			} 
 		}
 	}
 }
